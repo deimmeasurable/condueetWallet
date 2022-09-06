@@ -64,7 +64,7 @@ public class WalletServiceImpl implements WalletService {
     }
 
     @Override
-    public CreditWalletResponse creditWalletByUser(CreditWalletRequest creditWalletRequest) {
+    public CreditWalletResponse creditWalletByUser(InitTransactionRequest creditWalletRequest) {
         log.info("Wallet id is {}->", creditWalletRequest.getWalletId());
         log.info("Wallet is {}->", walletRepository.findById(creditWalletRequest.getWalletId()));
         Wallet foundWallet = walletRepository.findById(creditWalletRequest.getWalletId()).orElseThrow(

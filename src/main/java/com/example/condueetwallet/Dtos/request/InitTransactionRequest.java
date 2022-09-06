@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.validation.ValidationException;
 import javax.validation.constraints.Digits;
+import java.math.BigDecimal;
 import java.util.List;
 
 @Data
@@ -16,13 +17,14 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class InitTransactionRequest {
     @Digits(integer =9, fraction=0)
-    private Integer amount;
+    private BigDecimal amount;
     private String email;
     private String plan;
     private String reference;
     private String subAccount;
     private String callback_url;
     private Float quantity;
+    private Long walletId;
 
     private Integer invoice_limit;
     private MetaData MetaData;

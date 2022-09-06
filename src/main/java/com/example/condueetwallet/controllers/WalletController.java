@@ -4,6 +4,7 @@ import com.example.condueetwallet.Dtos.reponse.ApiResponse;
 import com.example.condueetwallet.Dtos.reponse.CreditWalletResponse;
 
 import com.example.condueetwallet.Dtos.request.CreditWalletRequest;
+import com.example.condueetwallet.Dtos.request.InitTransactionRequest;
 import com.example.condueetwallet.exceptions.WalletException;
 import com.example.condueetwallet.services.WalletService;
 import org.springframework.http.HttpStatus;
@@ -22,10 +23,10 @@ public class WalletController {
 //    public ResponseEntity<?> creditWalletByUser(CreditWalletRequest.@PathVariable String email)
 
     @PostMapping("/wallet/creditWallet")
-    public ResponseEntity<?> creditWalletByUser(@RequestBody CreditWalletRequest creditWalletRequest){
+    public ResponseEntity<?> creditWalletByUser(@RequestBody InitTransactionRequest initTransactionRequest){
         try{
 
-            CreditWalletResponse response= walletService.creditWalletByUser(creditWalletRequest);
+            CreditWalletResponse response= walletService.creditWalletByUser(initTransactionRequest);
             ApiResponse apiResponse= ApiResponse.builder()
                     .isSuccessFull(true)
                     .statusCode(200)

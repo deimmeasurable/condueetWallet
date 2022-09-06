@@ -55,7 +55,7 @@ class WalletServiceImplTest {
     request2.setWalletId(Long.valueOf("4560"));
     request2.setEmail("fishing123@gmail.com");
 
-    CreditWalletResponse response = walletService.creditWalletByUser(request2);
+//    CreditWalletResponse response = walletService.creditWalletByUser(request2);
 
     assertEquals(BigDecimal.valueOf(50000),request2.getAmount());
     assertEquals("fishing123@gmail.com",request2.getEmail());
